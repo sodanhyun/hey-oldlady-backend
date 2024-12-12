@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        default_batch_fetch_size: 100
+    open-in-view: false
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 100MB
+      enabled: true
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
